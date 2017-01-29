@@ -59,19 +59,19 @@
                     -->
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">강의 정리 <b class="caret"></b></a>
+                        <a href="#/" class="dropdown-toggle" data-toggle="dropdown">강의 정리 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="java.html">JAVA</a>
+                                <a href="#lec_menu1">JAVA</a>
                             </li>
                             <li>
-                                <a href="dbjdbc.html">데이터 모델링 + JDBC</a>
+                                <a href="#lec_menu2">데이터 모델링 + JDBC</a>
                             </li>
                             <li>
-                                <a href="servletjsp.html">Servlet/JSP</a>
+                                <a href="#lec_menu3">Servlet/JSP</a>
                             </li>
                             <li>
-                                <a href="htmlcssjs.html">HTML5/CSS3/Javascript</a>
+                                <a href="lec_menu4">HTML5/CSS3/Javascript</a>
                             </li>
                         </ul>
                     </li>
@@ -91,12 +91,14 @@
 		app.config(function($routeProvider) {
 			$routeProvider.when("/", {
 				templateUrl : "root.html"
-			}).when("/red", {
-				templateUrl : "404.html"
-			}).when("/green", {
+			}).when("/lec_menu1", {
+				templateUrl : "java.html"
+			}).when("/lec_menu2", {
 				templateUrl : "dbjdbc.html"
-			}).when("/blue", {
+			}).when("/lec_menu3", {
 				templateUrl : "servletjsp.html"
+			}).when("/lec_menu4", {
+				templateUrl : "htmlcssjs.html"
 			});
 		});
 	</script>
