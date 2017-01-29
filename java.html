@@ -48,7 +48,7 @@
                         <h4><i class="fa fa-fw fa-check"></i> JAVA 기초 </h4>
                     </div>
                     <div class="panel-body">
-                        <a href="#" class="btn btn-default">Intro</a><p></p>
+                        <a href="#lec01_01" class="btn btn-default">Intro</a><p></p>
                         <a href="#" class="btn btn-default">메모리</a><p></p>
                         <a href="#" class="btn btn-default">객체지향</a><p></p>
                         <a href="#" class="btn btn-default">변수와 매서드</a><p></p>
@@ -77,6 +77,24 @@
 
     </div>
     <!-- /.container -->
+
+
+	<script>
+		var app = angular.module("bondevMainApp", [ "ngRoute" ]);
+		app.config(function($routeProvider) {
+			$routeProvider.when("/lec01_01", {
+				templateUrl : "root.html"
+			}).when("/lec_menu1", {
+				templateUrl : "java.html"
+			}).when("/lec_menu2", {
+				templateUrl : "dbjdbc.html"
+			}).when("/lec_menu3", {
+				templateUrl : "servletjsp.html"
+			}).when("/lec_menu4", {
+				templateUrl : "htmlcssjs.html"
+			});
+		});
+	</script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
