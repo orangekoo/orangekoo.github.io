@@ -57,12 +57,12 @@
 		<div class="col-md-6">
 			<p>Instance 영역: Static이 아닌 new로 선언된 객체는 모두 여기에 올라갑니다. 최초에 eden 영역에 할당되고, 시간이 지남에 따라 s1, s2, old로 옮겨갑니다. 레퍼런스가 끊어지면 GC의 대상이 됩니다.</p>
 
-			<p>Permenent 영역: Perm gen 이라고도 하는데, 선언된 클래스가 가지고있는 메서드, 스태틱 벨류, 파이널 영역, 그리고 스트링이 저장되는 String literal pool로 이루어져 있습니다.
+			<p>Permanent 영역: Perm gen 이라고도 하는데, 선언된 클래스가 가지고있는 메서드, 스태틱 벨류, 파이널 영역, 그리고 스트링이 저장되는 String literal pool로 이루어져 있습니다.
 			</p>
 			
 			<p>Stack 영역: 로컬 변수들이 Stack의 형태로 입력되는 구간입니다. int, double같은 변수는 값이 바로바로 올라가지만, object형태의 객체는 주소값이 올라가고 할당은 instance에 이루어집니다.</p>
 			
-			<p>PC-register, non-heap: PC 레지스터는 현재 수행중인 JVM 명령의 주소를 갖는다. non-heap area는 현재 단계에서 생각하지 않아도 된다.
+			<p>PC-register, non-heap: PC 레지스터는 현재 수행중인 JVM 명령의 주소를 갖는다. non-heap area는 현재 단계에서 생각하지 않아도 됩니다.
 			</p>
 		</div>
 		<div class="col-md-6">
