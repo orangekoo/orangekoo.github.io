@@ -52,33 +52,80 @@
 	<!-- Features Section -->
 	<div class="row">
 		<div class="col-lg-12">
-			<h2 class="page-header">Intro <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
-		</div>
-		<div class="col-md-6">
-			<p>Java에 대한 개념 정리에 앞서 Java에 대한 소개를 하려고 합니다. Java가 현재에 오기까지는 어떤 일들이 있었는지 한번 되짚어보려고 합니다.</p>
-
-			<p>Java는 제임스 고슬링(James Gosling)에 의해 개발된 언어로 초기에는 가전에품에 탑재될 프로그램을 만들기 위한 목적으로 설계되었습니다. 
-			하지만 당시(1990년대)에는 가전제품을 판매하는 측면에서 이러한 프로그램은 너무 시대를 앞서나가는 것이었고, 따라서 외면당했습니다.
-			</p>
-			
-			<p>Java가 본격적으로 주목을 받게된 것은 인터넷의 보편화와 함께입니다. Java라는것 자체가 다양한 가전제품에서 네트워킹 할 수 있는 작은 시스템을 목적으로 만들어졌기 떄문에, 특정 OS에 종속적이지 않았고,
-			따라서 다양한 기기에 탑재될 수 있었습니다. <strong>즉, Java는 OS에 종속적이지 않은 언어입니다. <u>Java의 실행은 가상 머신(JVM)에 의해 이루어집니다.</u></strong></p>
-			
-			<p>자바는 운영체제의 영향을 받지않고, 각기 다른 환경에서 같은 코드로 GUI화면을 보여줄 수 있는 AWT라는 기술을 고안해냈습니다. 개발자는 Java로 코드만 작성해주면, JVM이 알아서 각 운영체제에 알맞는 화면을
-			만들어주는 것입니다. 이는 처음 목적이었던 소형 가전이 아닌 웹에서 더 주목을 받게되는데, 그 이유는 인터넷 화면 때문입니다. 당시에는 화려한 웹페이지 기술이 없었는데 Java의 애플릿(Applet)이	웹싸이트 화면을
-			구성하는데 알맞다는것을 사람들이 알게 되면서 Java는 인터넷에서 주목을 받게 됩니다.
-			</p>
-		</div>
-		<div class="col-md-6">
-			<img class="img-responsive" src="img/gosling.jpg" alt="">
+			<h2 class="page-header">String 클래스 <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
 		</div>
 		<div class="col-md-12">
-			<p>애플릿이 인기를 끌면서 자바는 원래의 목적인 가전이 아닌 인터넷에서 사용하는 언어로 발전하기 시작합니다. 따라서 현재의 <strong>Java는 Web을 Target으로 한 범용언어</strong>라고 할 수 있습니다.
-			Java를 개발한 Sun사에서는 일반적인 Java 프로그램인 Java SE(Standard Edition), 기업 환경에 맞는 Java EE(Enterprise Edition)을  1999년에 발표합니다. 여기서 자바 EE는 굉장한 성공을 거두게 됩니다.</p>
+			<p>String 클래스의 주요 메서드는 다음과 같습니다.</p>
+			<ul>
+				<li>concat(추가할 문자열): 문자열을 연결할 때</li>
+				<li>substring(자르기 시작할 위치, 자르고 싶은 길이): 문자열을 자르고 싶을 때</li>
+				<li>length(): 문자열의 길이를 리턴</li>
+				<li>charAt(위치): 문자열 중에서 특정한 위치의 글자를 찾고 싶을 때</li>
+				<li>indexOf(찾고자 하는 문자열): 자신의 원하는 특정 문자열의 위치</li>
+				<li>equals(비교대상 문자열): 다른 문자열과의 내용의 비교</li>
+				<li>trim(): 문자열 뒤에 있는 공백을 제거하고자 할 때</li>
+				<li>split(토근): 문자열을 특정 토큰으로 분리</li>
+			</ul>
 		</div>
 	</div>
 	<!-- /.row -->
 
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="page-header">StringBuffer, StringBuilder <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
+		</div>
+		<div class="col-md-12">
+			<p>String은 속도 면에서 너무나 느리기 때문에 가능하면 다른 클래스를 활용하는 것이 좋습니다. String은 String Literal Pool에 들어가는 불변의 객체이기 때문에 메모리 내에서 작업이 많이 이루어 지기 때문입니다.
+			여기서 StringBuffer는 동기화 이슈를 지원하기위한(?) key를 지원하고, StringBuilder는 이 기능이 없어서 StringBuilder가 더 빠릅니다. 사용할 때에는 String과 다르게 +가 아닌 append() 메서드를 이용합니다.</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="page-header">Calendar <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
+		</div>
+		<div class="col-md-12">
+			<p>날짜를 처리할 때는 Celendar 계열 클래스를 사용합니다. java.util.Calendar 클래스 혹은 java.util.GregorianCalendar 클래스를 가장 많이 사용합니다. 이에 대한 사용법은 Java API 문서에 자세히 나와있습니다.</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="page-header">Date 클래스 <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
+		</div>
+		<div class="col-md-12">
+			<p>Date는 Calender와 long의 중간 고리 역할을 합니다. 과거에는 Date가 날짜 처리의 주요 클래스 였으나, JDK1.1 부터 날짜 변경선 등의 문제와 같은 현실적인 지역별 문제가 많이 고려되여 사장되었습니다.</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="page-header">Scanner 클래스 <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
+		</div>
+		<div class="col-md-12">
+			<p>Scanner는 사용자로부터 입력을 받거나 파일에서 데이터를 읽어낼 수 있는 클래스 입니다. 참고로 Scanner는 Java 5부터 지원됩니다.</p>
+		</div>
+	</div>	
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="page-header">Wrapper 클래스 <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
+		</div>
+		<div class="col-md-12">
+			<p>Wrapper는 기본 자료형을 객체 자료형으로 만듭니다. Integer, Double, Byte, Long, Float, Character, Boolean, Short 등이 있습니다. 모든 Wrapper 클래스는 그 자체가 변경 불가능한 객체만 생산 할 수 있으므로, 연산을 한다고 해도 기 결과가 원래
+			객체를 덮어 씌우는 것이 아니라 새로운 객체로 만들어져 참조하게 됩니다. Java 5부터 오토 박싱과 오토 언박싱 기능이 제공되어 변수 측면에서의 제약 사항이 없어졌는데, 코드의 퍼포먼스를 고려한다면 지양하는 것이 좋습니다.</p>
+		</div>
+	</div>	
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="page-header">Formatter 클래스 <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
+		</div>
+		<div class="col-md-12">
+			<p>Formatter는 날짜나, 숫자, 데이터의 포매팅에 대한 통일된 방법을 제공합니다. printf라는 메서드도 있지만 이는 보안에 좋지 않기 떄문에, Formatter를 사용하는 것이 좋습니다. 
+			Formatter 클래스는 데이터를 String 타입의 반환 값으로 사용할 수 있는 장치를 제공합니다.</p>
+		</div>
+	</div>		
 	<!-- jQuery -->
     <script src="js/jquery.js"></script>
 
