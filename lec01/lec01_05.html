@@ -52,32 +52,51 @@
 	<!-- Features Section -->
 	<div class="row">
 		<div class="col-lg-12">
-			<h2 class="page-header">Intro <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
-		</div>
-		<div class="col-md-6">
-			<p>Java에 대한 개념 정리에 앞서 Java에 대한 소개를 하려고 합니다. Java가 현재에 오기까지는 어떤 일들이 있었는지 한번 되짚어보려고 합니다.</p>
-
-			<p>Java는 제임스 고슬링(James Gosling)에 의해 개발된 언어로 초기에는 가전에품에 탑재될 프로그램을 만들기 위한 목적으로 설계되었습니다. 
-			하지만 당시(1990년대)에는 가전제품을 판매하는 측면에서 이러한 프로그램은 너무 시대를 앞서나가는 것이었고, 따라서 외면당했습니다.
-			</p>
-			
-			<p>Java가 본격적으로 주목을 받게된 것은 인터넷의 보편화와 함께입니다. Java라는것 자체가 다양한 가전제품에서 네트워킹 할 수 있는 작은 시스템을 목적으로 만들어졌기 떄문에, 특정 OS에 종속적이지 않았고,
-			따라서 다양한 기기에 탑재될 수 있었습니다. <strong>즉, Java는 OS에 종속적이지 않은 언어입니다. <u>Java의 실행은 가상 머신(JVM)에 의해 이루어집니다.</u></strong></p>
-			
-			<p>자바는 운영체제의 영향을 받지않고, 각기 다른 환경에서 같은 코드로 GUI화면을 보여줄 수 있는 AWT라는 기술을 고안해냈습니다. 개발자는 Java로 코드만 작성해주면, JVM이 알아서 각 운영체제에 알맞는 화면을
-			만들어주는 것입니다. 이는 처음 목적이었던 소형 가전이 아닌 웹에서 더 주목을 받게되는데, 그 이유는 인터넷 화면 때문입니다. 당시에는 화려한 웹페이지 기술이 없었는데 Java의 애플릿(Applet)이	웹싸이트 화면을
-			구성하는데 알맞다는것을 사람들이 알게 되면서 Java는 인터넷에서 주목을 받게 됩니다.
-			</p>
-		</div>
-		<div class="col-md-6">
-			<img class="img-responsive" src="img/gosling.jpg" alt="">
+			<h2 class="page-header">제어문 <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
 		</div>
 		<div class="col-md-12">
-			<p>애플릿이 인기를 끌면서 자바는 원래의 목적인 가전이 아닌 인터넷에서 사용하는 언어로 발전하기 시작합니다. 따라서 현재의 <strong>Java는 Web을 Target으로 한 범용언어</strong>라고 할 수 있습니다.
-			Java를 개발한 Sun사에서는 일반적인 Java 프로그램인 Java SE(Standard Edition), 기업 환경에 맞는 Java EE(Enterprise Edition)을  1999년에 발표합니다. 여기서 자바 EE는 굉장한 성공을 거두게 됩니다.</p>
+			<p>상황에 대한 판단을 하여 프로그램이 그때그때 올바르게 동작할 수 있도록 해주기 위해 필요한 것이 제어문입니다. "지금 날씨가 맑은가? 맑다면 그냥 외출하고, 흐리거나 비가온다면 우산을 챙겨라" 와 같은 논리적인 흐름을 제어하는 것이 제어문의 역할이죠.
+			그렇다면 제어문에는 어떤것들이 있는지 한 번 살펴보겠습니다.</p>
 		</div>
 	</div>
 	<!-- /.row -->
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="page-header">if~else <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
+		</div>
+		<div class="col-md-12">
+			<p>단순하게 if만 사용하면 주어진 조건의 참, 거짓만 따져 로직을 수행합니다. else는 if문의 조건이 거짓일 경우 수행되는 부분입니다.</p>
+			<p>여러가지 상황에 대한 제어가 필요하다면 if~else if ~...~else의 형태로 코딩할 수도 있습니다.</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="page-header">switch <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
+		</div>
+		<div class="col-md-12">
+			<p>switch는 if ~ else if의 변형입니다. switch 구문은 쉽고 간결하게 상황을 나누어 로직을 처리할 수 있어 많이 사용됩니다. switch 안에서는 case로 조건을 구분하고 break문을 사용하여 다음케이스를 수행할 것인지 아닌지를 결정합니다.
+			switch는 다음과 같은 단점이 있으므로, 무조건 쓰는 것이 아니라 상황에 맞게 사용하길 바랍니다.</p>
+			<ul>
+				<li>switch는 부등호 연산, 논리 연산, 산술 연산 처리가 불가능하여 제약이 많다.</li>
+				<li>break 문을 실수로 빼먹을 경우, 디버깅이 어렵고 예상 못한 문제가 일어난다.</li>
+				<li>case에는 콜론이 사용되므로, 세미콜론과 헷갈릴 수 있다.</li>
+			</ul>
+		</div>
+	</div>
+	
+		
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="page-header">루프 <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
+		</div>
+		<div class="col-md-12">
+			<p>흔히 반복문이라고도 불리며, 짧은 코드로 여러 번 같은 동작을 하게 만드는 구문을 말합니다.</p>
+			<p>for, forEach, while, do~while 등이 있으며 사용법은 생략하도록 하겠습니다.</p>
+			<p>break 키워드는 반복문을 탈출하며, continue 키워드는 다시 조건문으로 돌아가 조건을 만족하면 반복문을 돌고 아니면 탈출하게 하는 역할을 합니다.</p>
+		</div>
+	</div>
 
 	<!-- jQuery -->
     <script src="js/jquery.js"></script>
