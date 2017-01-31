@@ -52,33 +52,53 @@
 	<!-- Features Section -->
 	<div class="row">
 		<div class="col-lg-12">
-			<h2 class="page-header">Intro <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
-		</div>
-		<div class="col-md-6">
-			<p>Java에 대한 개념 정리에 앞서 Java에 대한 소개를 하려고 합니다. Java가 현재에 오기까지는 어떤 일들이 있었는지 한번 되짚어보려고 합니다.</p>
-
-			<p>Java는 제임스 고슬링(James Gosling)에 의해 개발된 언어로 초기에는 가전에품에 탑재될 프로그램을 만들기 위한 목적으로 설계되었습니다. 
-			하지만 당시(1990년대)에는 가전제품을 판매하는 측면에서 이러한 프로그램은 너무 시대를 앞서나가는 것이었고, 따라서 외면당했습니다.
-			</p>
-			
-			<p>Java가 본격적으로 주목을 받게된 것은 인터넷의 보편화와 함께입니다. Java라는것 자체가 다양한 가전제품에서 네트워킹 할 수 있는 작은 시스템을 목적으로 만들어졌기 떄문에, 특정 OS에 종속적이지 않았고,
-			따라서 다양한 기기에 탑재될 수 있었습니다. <strong>즉, Java는 OS에 종속적이지 않은 언어입니다. <u>Java의 실행은 가상 머신(JVM)에 의해 이루어집니다.</u></strong></p>
-			
-			<p>자바는 운영체제의 영향을 받지않고, 각기 다른 환경에서 같은 코드로 GUI화면을 보여줄 수 있는 AWT라는 기술을 고안해냈습니다. 개발자는 Java로 코드만 작성해주면, JVM이 알아서 각 운영체제에 알맞는 화면을
-			만들어주는 것입니다. 이는 처음 목적이었던 소형 가전이 아닌 웹에서 더 주목을 받게되는데, 그 이유는 인터넷 화면 때문입니다. 당시에는 화려한 웹페이지 기술이 없었는데 Java의 애플릿(Applet)이	웹싸이트 화면을
-			구성하는데 알맞다는것을 사람들이 알게 되면서 Java는 인터넷에서 주목을 받게 됩니다.
-			</p>
-		</div>
-		<div class="col-md-6">
-			<img class="img-responsive" src="img/gosling.jpg" alt="">
+			<h2 class="page-header">상속 <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
 		</div>
 		<div class="col-md-12">
-			<p>애플릿이 인기를 끌면서 자바는 원래의 목적인 가전이 아닌 인터넷에서 사용하는 언어로 발전하기 시작합니다. 따라서 현재의 <strong>Java는 Web을 Target으로 한 범용언어</strong>라고 할 수 있습니다.
-			Java를 개발한 Sun사에서는 일반적인 Java 프로그램인 Java SE(Standard Edition), 기업 환경에 맞는 Java EE(Enterprise Edition)을  1999년에 발표합니다. 여기서 자바 EE는 굉장한 성공을 거두게 됩니다.</p>
+			<p>상속이 무엇인지를 논하기 전에 상속의 필요성에 대해 먼저 생각해보고자 합니다. 회사에서 이런 요구가 주어졌다고 합시다.</p>
+			<p><strong>"동그라미와, 정삼각형과, 정사각형을 그리는 프로그램을 만들어주세요. 각각 반지름 혹은 한 변의 길이를 인자로 넓이를 구할 수 있어야합니다." </strong></p>
+			<p>절차적 프로그래밍: 구조체를 만들까요? struct Circle, struct Triangle, struct Rect. 그 후 각 도형별로 넓이를 구할 수 있는 getCircleArea, getTriangleArea, getRectArea라는 메서드를 구현합니다. 이 후 제출합니다.</p>
+			<p>객체지향적 프로그래밍: 클래스를 만듭니다. class Circle, class Triangle, class Rect. 정답부터 말하자면 class Shape라는 것을 하나 더 만든 후, 
+			Circle, Triangle, Rect가 이를 상속하도록 만듭니다. Shape 클래스에  구현된 getArea를 각각 오버라이드하여 각 도형별로 알맞게 사용합니다.</p>
+			<hr>
+			<p>(다음날..)</p>
+			<p><strong>추가요구 : "아..미안한데, 스펙이 바뀌어서 오각형과 육각형을 추가해야할 것 같아." </strong></p>
+			<p>절차적 프로그래밍: 이런, 다급히 Pent와 Hex구조체를 만듭니다. getPentArea, getHexArea 메서드를 만듭니다. 코드 여기저기에 else if(도형==오각형) else if(도형==육각형)과 같은 조건문을 덕지 덕지 넣어야합니다.
+			왠지모르게 잘 돌아갈 것 같은 코드가 꼬이기 시작합니다.</p>
+			<p>객체지향적 프로그래밍: 클래스를 만듭니다. class Pent, class Hex. 둘 다 class Shape라는 것을 상속받게합니다.
+			getArea를 오버라이드하여 오각형과 육각형의 넓이를 구할 수 있게 해줍니다. Shape별로 알아서 해당 도형의 getArea 메서드를 사용하게 구현되어 있으므로, 다른 코드는 건드릴 필요가 없습니다.</p>
+			<hr>
+			<p>이처럼 상속을 활용하면 코드의 확장의 유연해집니다.</p>
 		</div>
+
 	</div>
 	<!-- /.row -->
 
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="page-header">추상 클래스 <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
+		</div>
+		<div class="col-md-12">
+			<p>abstract 명령어를 이용하여, 객체가 직접적으로 선언되는 것이 아니라 상속을 통해서만 사용되도록 유도하는 것이 추상 클래스입니다.</p>
+			<p>메서드의 앞에 abstract 키워드를 붙이면 이는 추상 메서드가 되며 오버라이드를 강제하게 됩니다.</p>
+		</div>
+
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="page-header">인터페이스 <a href="#lec_menu1" type="button" class="btn btn-default">돌아가기</a></h2> 
+		</div>
+		<div class="col-md-12">
+			<p>다중 상속을 허용하지 않는 자바에서, 다중 상속이 불가능하여 해결할 수 없는 문제들을 해결하기 위해 생겨난 것이 인터페이스 입니다. 
+			인터페이스는 모든 메서드를 춧항 메서드로 정의해야하며, 하위 클래스에서는 이를 반드시 구현해야합니다. 얼핏 생각하면 인터페이스 자체에는 전혀 코드를 구현할 수 없으니까
+			있으나 마나가 아닌가라고 생각할 수도 있지만 이는 오산입니다. 인터페이스를 인자나 리턴 유형으로 사용하게 되면, 이 인터페이스를 구현하는 모든 객체는 여기에 사용될 수 있으므로 큰 의미가 있습니다.</p>
+			<p>메서드의 앞에 abstract 키워드를 붙이면 이는 추상 메서드가 되며 오버라이드를 강제하게 됩니다.
+			</p>
+		</div>
+
+	</div>
 	<!-- jQuery -->
     <script src="js/jquery.js"></script>
 
