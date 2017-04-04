@@ -4,12 +4,10 @@
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="bondevBlog">
+
     <meta name="author" content="bondev">
 
-    <title>BonDev's Blog</title>
+    <title>Fishing</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -27,109 +25,10 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    
-    <script src="js/angular.min.js"></script>
-	<script src="js/angular-route.js"></script>
 
 </head>
 
-<body ng-app="bondevMainApp">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#/">BonDev's Blog</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                
-<!--                     <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li> 
-                    -->
-
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">강의 정리 <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#lec_menu1">JAVA</a>
-                            </li>
-                            <li>
-                                <a href="#lec_menu2">데이터 모델링 + JDBC</a>
-                            </li>
-                            <li>
-                                <a href="#lec_menu3">Servlet/JSP</a>
-                            </li>
-                            <li>
-                                <a href="#lec_menu4">HTML5/CSS3/Javascript</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-	<!-- Page Content -->
-	<div class="container">
-	
-		<!-- This is a view -->
-		<div ng-view></div>
-
-		<hr>
-		<!-- Footer -->
-		<footer>
-			<div class="row">
-				<div class="col-lg-12">
-					<p>Copyright &copy; BonDev 2017</p>
-				</div>
-			</div>
-		</footer>
-	</div>
-	<!-- /.container -->
-
-
-
-	<script>
-		var app = angular.module("bondevMainApp", [ "ngRoute" ]);
-		app.config(function($routeProvider) {
-			$routeProvider.when("/", {
-				templateUrl : "root.html"
-			}).when("/lec_menu1", {
-				templateUrl : "java.html"
-			}).when("/lec_menu2", {
-				templateUrl : "dbjdbc.html"
-			}).when("/lec_menu3", {
-				templateUrl : "servletjsp.html"
-			}).when("/lec_menu4", {
-				templateUrl : "htmlcssjs.html"
-			}).when("/lec01_01", {
-				templateUrl : "lec01/lec01_01.html"
-			});
-		});
-	</script>
-
-
-
-
-	<!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<body>
 
 
 </body>
